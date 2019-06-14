@@ -9,7 +9,7 @@ const BadgesList = props => {
           return (
             <li className="Badge_Container" key={badge.id}>
               <div className="Badge_Avatar">
-                <img src={props.avatarUrl} alt={props.firstName}/>
+                <img src={badge.avatarUrl} alt={props.firstName}/>
               </div>
               <div className="Badge_Info">
                 <p className="Badge_Name">{badge.firstName} {badge.lastName}</p>

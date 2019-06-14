@@ -1,29 +1,45 @@
 .Badge_Container{
   width: 100%;
   padding: 10px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-bottom: 20px;
-  border-radius: 2px;
+  border-radius: 4px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
+  background-color: white;
+  box-shadow: 3px 3px 1px #ddd;
 }
 
 .Badge_Avatar{
-  width: 30%;
-  /* height: 100%; */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 10px;
 }
 
-.Badge_Avatar img {
+.Badge_Avatar img{
   width: 100%;
-  /* height: 100%; */
-  border: 1px solid black;
+}
+
+.Badge_Info{
+  font-family: 'Lato';
+  margin-left: 20px;
+}
+
+.Badge_Name{
+  font-weight: bold;
 }
 
 .Badge_Twitter{
-  color: #56b9f9;
+  color: #00ace3;
 }
 
 .Badge_JobTitle{
   font-size: 14px;
+}
+
+p{
+  margin: 0px;
 }
