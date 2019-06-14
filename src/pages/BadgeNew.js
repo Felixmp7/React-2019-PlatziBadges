@@ -39,10 +39,10 @@ class BadgeNew extends Component {
           <div className="row">
             <div className="col-6">
               <Badge
-                firstName="Richard"
-                lastName="Kaufman"
-                twitter="sparragus"
-                jobTitle="Frontend Engineer"
+                firstName={this.state.form.firstName || "First Name"}
+                lastName={this.state.form.lastName || "Last Name"}
+                twitter={this.state.form.twitter || "Twitter"}
+                jobTitle={this.state.form.jobTitle || "Job Title"}
                 avatarUrl="https://www.gravatar.com/avatar/21594ed15d68ace3965642162f8d2e84?d=identicon"
               />
             </div>
