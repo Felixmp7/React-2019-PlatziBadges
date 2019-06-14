@@ -7,6 +7,11 @@ class BadgeForm extends Component {
       value: e.target.value
     });
   }
+  handleClick = e => {
+    e.preventDefault() // Puedo solucionar el evento submit con el preventDefault
+    // o añadiendole un type="button" al boton
+    console.log('Button has clicked')
+  }
   render () {
     return (
       <div>
@@ -23,7 +28,12 @@ class BadgeForm extends Component {
             />
           </div>
 
-          <button className="btn btn-primary">Save</button>
+          <button
+            onClick={this.handleClick}
+            className="btn btn-primary"
+            >
+            Save
+          </button>
         </form>
       </div>
     )
