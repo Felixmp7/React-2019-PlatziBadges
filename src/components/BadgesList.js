@@ -8,6 +8,8 @@ const BadgesList = props => {
           return (
             <li key={badge.id}>
               <p>{badge.firstName} {badge.lastName}</p>
+              <p>{badge.twitter}</p>
+              <p>{badge.jobTitle}</p>
             </li>
           )
         })
