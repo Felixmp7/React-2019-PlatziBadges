@@ -6,6 +6,15 @@ import header from '../images/badge-header.svg'
 import './styles/BadgeNew.css'
 
 class BadgeNew extends Component {
+  state = { form: {}}
+
+  handleChange = e => {
+    this.setState({
+      form:{ //De esta forma estoy sobreescribiendo los datos siempre
+        [e.target.name]: e.target.value
+      }
+    })
+  }
   render () {
     return (
       <div>
@@ -26,7 +35,7 @@ class BadgeNew extends Component {
               />
             </div>
             <div className="col-6">
-              <BadgeForm />
+              <BadgeForm onChange={this.handleChange}/>
             </div>
           </div>
         </div>

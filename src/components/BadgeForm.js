@@ -2,12 +2,7 @@ import React, {Component} from 'react'
 
 class BadgeForm extends Component {
   state = {}
-  handleChange = e => {
-    this.setState({
-      // firstName: e.target.value, Para crear keys dinamicos puedo usar []
-      [e.target.name]: e.target.value
-    })
-  }
+
   handleClick = e => {
     console.log('Button was clicked')
   }
@@ -24,7 +19,7 @@ class BadgeForm extends Component {
           <div className="form-group">
             <label>First Name</label>
             <input
-              onChange={this.handleChange}
+              onChange={this.props.onChange}
               type="text"
               className="form-control"
               name="firstName"
@@ -35,7 +30,7 @@ class BadgeForm extends Component {
           <div className="form-group">
             <label>Last Name</label>
             <input
-              onChange={this.handleChange}
+              onChange={this.props.onChange}
               type="text"
               className="form-control"
               name="lastName"
@@ -46,7 +41,7 @@ class BadgeForm extends Component {
           <div className="form-group">
             <label>Email</label>
             <input
-              onChange={this.handleChange}
+              onChange={this.props.onChange}
               type="text"
               className="form-control"
               name="email"
@@ -57,7 +52,7 @@ class BadgeForm extends Component {
           <div className="form-group">
             <label>Job Title</label>
             <input
-              onChange={this.handleChange}
+              onChange={this.props.onChange}
               type="text"
               className="form-control"
               name="jobTitle"
@@ -68,7 +63,7 @@ class BadgeForm extends Component {
           <div className="form-group">
             <label>Twitter</label>
             <input
-              onChange={this.handleChange}
+              onChange={this.props.onChange}
               type="text"
               className="form-control"
               name="twitter"
