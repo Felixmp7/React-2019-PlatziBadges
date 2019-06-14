@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 
 class BadgeForm extends Component {
-  state = {}
-
   handleClick = e => {
     console.log('Button was clicked')
   }
@@ -23,7 +21,7 @@ class BadgeForm extends Component {
               type="text"
               className="form-control"
               name="firstName"
-              value={this.state.firstName}
+              value={this.props.formValues.firstName}
             />
           </div>
 
@@ -34,7 +32,7 @@ class BadgeForm extends Component {
               type="text"
               className="form-control"
               name="lastName"
-              value={this.state.lastName}
+              value={this.props.formValues.lastName}
             />
           </div>
 
@@ -45,7 +43,7 @@ class BadgeForm extends Component {
               type="text"
               className="form-control"
               name="email"
-              value={this.state.email}
+              value={this.props.formValues.email}
             />
           </div>
 
@@ -56,7 +54,7 @@ class BadgeForm extends Component {
               type="text"
               className="form-control"
               name="jobTitle"
-              value={this.state.jobTitle}
+              value={this.props.formValues.jobTitle}
             />
           </div>
 
@@ -67,7 +65,7 @@ class BadgeForm extends Component {
               type="text"
               className="form-control"
               name="twitter"
-              value={this.state.twitter}
+              value={this.props.formValues.twitter}
             />
           </div>
 

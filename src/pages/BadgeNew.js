@@ -6,7 +6,15 @@ import header from '../images/badge-header.svg'
 import './styles/BadgeNew.css'
 
 class BadgeNew extends Component {
-  state = { form: {}}
+  state = {
+    form: {
+      firstName: '',
+      lastName: '',
+      jobTitle: '',
+      email: '',
+      twitter: ''
+    }
+  }
 
   handleChange = e => {
     this.setState({
@@ -39,7 +47,7 @@ class BadgeNew extends Component {
               />
             </div>
             <div className="col-6">
-              <BadgeForm onChange={this.handleChange}/>
+              <BadgeForm onChange={this.handleChange} formValues={this.state.form}/>
             </div>
           </div>
         </div>
