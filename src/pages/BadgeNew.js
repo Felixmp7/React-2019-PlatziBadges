@@ -10,8 +10,12 @@ class BadgeNew extends Component {
 
   handleChange = e => {
     this.setState({
-      form:{ //De esta forma estoy sobreescribiendo los datos siempre
-        [e.target.name]: e.target.value
+      // form:{ //De esta forma estoy sobreescribiendo los datos siempre
+      //   [e.target.name]: e.target.value
+      // }
+      form: {
+        ...this.state.form, // Con el Spread operator puedo ir guardando todos
+        [e.target.name]: e.target.value // los datos sin pisar los anteriores.
       }
     })
   }
