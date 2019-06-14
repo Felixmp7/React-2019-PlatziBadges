@@ -8,16 +8,20 @@ class BadgeForm extends Component {
     });
   }
   handleClick = e => {
-    e.preventDefault() // Puedo solucionar el evento submit con el preventDefault
+    //e.preventDefault() // Puedo solucionar el evento submit con el preventDefault
     // o añadiendole un type="button" al boton
-    console.log('Button has clicked')
+    console.log('Button was clicked')
+  }
+  handleSubmit = e => {
+    e.preventDefault()
+    console.log('Form was submited')
   }
   render () {
     return (
       <div>
         <h1>New Attendant</h1>
 
-        <form action="">
+        <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>FirstName</label>
             <input
