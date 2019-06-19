@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import { Link } from 'react-router-dom'
 import BadgesList from '../components/BadgesList'
 import confLogo from '../images/badge-header.svg'
@@ -39,7 +39,7 @@ class Badges extends Component {
 
   render () {
     return (
-      <div>
+      <Fragment>
         <div className="Badges">
           <div className="Badges__hero">
             <div className="Badges__container">
@@ -61,8 +61,7 @@ class Badges extends Component {
             <BadgesList badges={this.state.data}/>
           </div>
         </div>
-
-      </div>
+      </Fragment>
     )
   }
 }
