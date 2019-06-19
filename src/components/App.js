@@ -1,16 +1,19 @@
 import React, {Component} from 'react'
+import { BrowserRouter , Route, Switch} from 'react-router-dom'
 import BadgeNew from '../pages/BadgeNew';
 import Badges from '../pages/Badges';
-import { BrowserRouter , Route, Switch} from 'react-router-dom'
+import Layout from './Layout'
 
 class App extends Component {
   render () {
     return (
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/badges" component={Badges}/>
-          <Route exact path="/badges/new" component={BadgeNew}/>
-        </Switch>
+        <Layout>
+          <Switch>
+            <Route exact path="/badges" component={Badges}/>
+            <Route exact path="/badges/new" component={BadgeNew}/>
+          </Switch>
+        </Layout>
       </BrowserRouter>
     )
   }
