@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { BrowserRouter , Route, Switch} from 'react-router-dom'
 import BadgeNew from '../pages/BadgeNew';
 import Badges from '../pages/Badges';
+import Notfound from '../pages/Notfound';
 import Layout from './Layout'
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/badges" component={Badges}/>
             <Route exact path="/badges/new" component={BadgeNew}/>
+            <Route component={Notfound}/>
           </Switch>
         </Layout>
       </BrowserRouter>
