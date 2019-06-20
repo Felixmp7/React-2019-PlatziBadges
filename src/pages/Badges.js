@@ -1,9 +1,17 @@
 import React, {Component, Fragment} from 'react'
 import { Link } from 'react-router-dom'
+import { css } from '@emotion/core';
+import { MoonLoader } from 'react-spinners';
 import BadgesList from '../components/BadgesList'
 import confLogo from '../images/badge-header.svg'
 import API from '../API'
 import './styles/Badges.css'
+
+const override = css`
+    display: block;
+    margin: auto;
+    border-color: #7DCD3F;
+`;
 
 class Badges extends Component {
   state = {
@@ -30,7 +38,19 @@ class Badges extends Component {
 
   render () {
     if (this.state.loading) {
-      return <h3>Loading ...</h3>
+      return (
+        <div className="Loader__container">
+          <div className="Loader">
+            <MoonLoader
+                      css={override}
+                      sizeUnit={"px"}
+                      size={80}
+                      color={'#1B1B25'}
+                      loading={this.state.loading}
+                    />
+          </div>
+        </div>
+      )
     }
 
     if (this.state.error) {
