@@ -24,11 +24,14 @@
     "@fortawesome/react-fontawesome": "0.1.4",
     "faker": "4.1.0",
     "json-server": "0.14.2",
-    "npm-run-all": "4.1.5"
+    "npm-run-all": "4.1.5",
+    "react-spinners": "^0.5.4"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "presets": ["react", "env"],
+  "plugins": ["emotion"],
   "browserslist": [
     ">0.2%",
     "not dead",
