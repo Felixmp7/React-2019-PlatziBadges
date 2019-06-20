@@ -1,8 +1,24 @@
 import React from 'react'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
 import './styles/BadgesList.css'
 
 const BadgesList = props => {
+
+  if(props.badges.length === 0){
+    return (
+      <div>
+        <h2>No badges were found</h2>
+        <Link
+          to="/badges/new"
+          className="btn btn-primary"
+          >
+          Create your first badge.
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <ul className="list-unstyled">
       {
