@@ -7,13 +7,13 @@ import './styles/Badges.css'
 class Badges extends Component {
   constructor(props){
     super(props)
-    console.log('1. constructor');
+    console.log('1. se disparó el constructor');
     this.state = {
       data: [],
     }
   }
   componentDidMount(){
-    console.log('3. componentDidMount');
+    console.log('3. se disparó el componentDidMount');
     setTimeout(()=>{
       this.setState({
         data: [
@@ -48,9 +48,21 @@ class Badges extends Component {
       })
     }, 3000)
   }
+  componentDidUpdate(prevProps, prevState){
+    console.log('5. se disparó el componentDidUpdate');
+    console.log({
+      prevProps,
+      prevState
+    });
+
+    console.log({
+      prevProps: this.props,
+      prevState: this.state
+    });
+  }
 
   render () {
-    console.log('2. render');
+    console.log('2/4. se disparó el render');
     return (
       <Fragment>
         <div className="Badges">
