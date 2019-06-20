@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react'
 import { Link } from 'react-router-dom'
 import BadgesList from '../components/BadgesList'
 import confLogo from '../images/badge-header.svg'
+import API from '../API'
 import './styles/Badges.css'
 
 class Badges extends Component {
@@ -19,11 +20,11 @@ class Badges extends Component {
     this.setState({ loading: true, error: null})
 
     try{
-      const data = []
+      const data = API.badges.list()
       this.setState({ loading: false, data})
     }
     catch(e){
-      this.setState({ loading: false, error})
+      this.setState({ loading: false, error: e})
     }
   }
 
