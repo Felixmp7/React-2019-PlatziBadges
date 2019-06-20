@@ -32,6 +32,10 @@ class Badges extends Component {
     if (this.state.loading) {
       return <h3>Loading ...</h3>
     }
+
+    if (this.state.error) {
+      return <h3>{`Error ${this.state.error.message}`}</h3>
+    }
     return (
       <Fragment>
         <div className="Badges">
