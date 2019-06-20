@@ -14,7 +14,7 @@ class Badges extends Component {
   }
   componentDidMount(){
     console.log('3. se disparó el componentDidMount');
-    setTimeout(()=>{
+    this.timeoutId = setTimeout(()=>{
       this.setState({
         data: [
           {
@@ -59,6 +59,11 @@ class Badges extends Component {
       prevProps: this.props,
       prevState: this.state
     });
+  }
+
+  componentWillUnmount(){
+    console.log('6. se disparó el componentWillUnmount');
+    clearTimeout(this.timeoutId)
   }
 
   render () {
