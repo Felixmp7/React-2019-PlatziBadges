@@ -16,11 +16,11 @@ class Badges extends Component {
     this.fetchData()
   }
 
-  fetchData = () => {
+  fetchData = async () => {
     this.setState({ loading: true, error: null})
 
     try{
-      const data = API.badges.list()
+      const data = await API.badges.list()
       this.setState({ loading: false, data})
     }
     catch(e){
