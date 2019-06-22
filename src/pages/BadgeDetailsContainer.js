@@ -32,9 +32,8 @@ class BadgeDetailsContainer extends Component {
 
   render () {
     if (this.state.loading) { return <Loader size={30} color={'#1B1B25'}/> }
-
     if (this.state.error) { return <PagError error={this.state.error.message}/> }
-
+    
     return <BadgeDetails badge={this.state.data}/>
   }
 }
