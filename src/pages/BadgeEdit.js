@@ -8,7 +8,7 @@ import './styles/BadgeEdit.css'
 
 class BadgeEdit extends Component {
   state = {
-    loading: false,
+    loading: true,
     error: null,
     form: {
       firstName: '',
@@ -16,6 +16,24 @@ class BadgeEdit extends Component {
       jobTitle: '',
       email: '',
       twitter: ''
+    }
+  }
+
+  componentDidMount() {
+    this.fetchData()
+  }
+
+  fetchData = async e => {
+    this.setState({ loading: true })
+
+    try {
+      const data = await API.badges.read(
+        this.props.match.params.badgeId
+      )
+      // console.log(this.props.match.params);
+      this.setState({ loading: false, form: data })
+    } catch (error) {
+      this.setState({ loading: false, error })
     }
   }
 
