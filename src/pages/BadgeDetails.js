@@ -6,6 +6,8 @@ import confLogo from '../images/platziconf-logo.svg'
 import './styles/BadgeDetails.css'
 
 const BadgeDetails = props => {
+  const [count,setCount] = React.useState(0)
+
   const badge = props.badge
   return (
     <div>
@@ -39,6 +41,15 @@ const BadgeDetails = props => {
             <h2>Actions</h2>
             <React.Fragment>
               <div>
+                <button
+                    className="btn btn-secondary mr-4"
+                    onClick={()=>{
+                      setCount(count + 1)
+                    }}
+                  >
+                  Increase Count: {count}
+                </button>
+
                 <Link
                   className="btn btn-primary mb-4"
                   to={`/badges/${badge.id}/edit`}
