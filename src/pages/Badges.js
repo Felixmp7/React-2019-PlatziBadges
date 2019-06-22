@@ -17,7 +17,7 @@ class Badges extends Component {
   componentDidMount(){
     this.fetchData()
 
-    setInterval(this.fetchData, 10000)
+    setInterval(this.fetchData, 4000)
   }
 
   fetchData = async () => {
@@ -33,7 +33,7 @@ class Badges extends Component {
   }
 
   render () {
-    if (this.state.loading) {
+    if (this.state.loading && !this.state.data) {
       return (
         <div className="Loader__container">
           <div className="Loader">
@@ -72,6 +72,20 @@ class Badges extends Component {
         <div className="Badge__list">
           <div className="Badges__container">
             <BadgesList badges={this.state.data}/>
+            {
+              this.state.loading && (
+                <div className="Loader__container">
+                  <div className="Loader">
+                    <BeatLoader
+                              sizeUnit={"px"}
+                              size={10}
+                              color={'#ccc'}
+                              loading={this.state.loading}
+                            />
+                  </div>
+                </div>
+              )
+            }
           </div>
         </div>
       </Fragment>
