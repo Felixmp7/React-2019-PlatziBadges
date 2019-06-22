@@ -5,6 +5,7 @@ import confLogo from '../images/platziconf-logo.svg'
 import './styles/BadgeDetails.css'
 
 const BadgeDetails = props => {
+  const badge = props.badge
   return (
     <div>
       <div className="BadgeDetails__hero">
@@ -45,9 +46,9 @@ const BadgeDetails = props => {
                 </Link>
               </div>
 
-              <Reatc.Fragment>
+              <React.Fragment>
                 <button className="btn btn-danger">Delete</button>
-              </Reatc.Fragment>
+              </React.Fragment>
             </React.Fragment>
           </div>
         </div>
