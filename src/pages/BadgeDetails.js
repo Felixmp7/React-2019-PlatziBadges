@@ -49,7 +49,11 @@ const BadgeDetails = props => {
 
               <React.Fragment>
                 <button onClick={props.onOpenModal} className="btn btn-danger">Delete</button>
-                <DeleteBadgeModal isOpen={props.modalIsOpen} onClose={props.onCloseModal}/>
+                <DeleteBadgeModal
+                  isOpen={props.modalIsOpen}
+                  onClose={props.onCloseModal}
+                  onDeleteBadge={props.onDeleteBadge}
+                />
               </React.Fragment>
             </React.Fragment>
           </div>
