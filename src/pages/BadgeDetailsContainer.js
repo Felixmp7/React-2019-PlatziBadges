@@ -9,7 +9,8 @@ class BadgeDetailsContainer extends Component {
   state = {
     loading: true,
     error: null,
-    data: undefined
+    data: undefined,
+    modalIsOpen: false
   }
 
   componentDidMount() {
@@ -30,11 +31,29 @@ class BadgeDetailsContainer extends Component {
     }
   }
 
+  handleOpenModal = e => {
+    this.setState({
+      modalIsOpen: true
+    })
+  }
+  handleCloseModal = e => {
+    this.setState({
+      modalIsOpen: false
+    })
+  }
+
   render () {
     if (this.state.loading) { return <Loader size={30} color={'#1B1B25'}/> }
     if (this.state.error) { return <PagError error={this.state.error.message}/> }
-    
-    return <BadgeDetails badge={this.state.data}/>
+
+    return (
+      <BadgeDetails
+        onCloseModal={this.handleCloseModal}
+        onOpenModal={this.handleOpenModal}
+        modalIsOpen={this.state.modalIsOpen}
+        badge={this.state.data}
+      />
+    )
   }
 }
 
