@@ -35,14 +35,14 @@ class BadgeDetails extends Component {
 
   render () {
     if (this.state.loading) {
-      return <Loader size={30} color={'yellow'}/>
+      return <Loader size={30} color={'#1B1B25'}/>
     }
 
     if (this.state.error) {
       return <PagError error={this.state.error.message}/>
     }
-
     const badge = this.state.data
+
     return (
       <div>
         <div className="BadgeDetails__hero">
