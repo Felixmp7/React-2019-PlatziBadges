@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import Badge from '../components/Badge'
+import Loader from '../components/Loader'
+import PagError from '../components/PagError'
 import confLogo from '../images/platziconf-logo.svg'
 import './styles/BadgeDetails.css'
 import API from '../API'
@@ -32,8 +34,6 @@ class BadgeDetails extends Component {
   }
 
   render () {
-    const badge = this.state.data
-    console.log(badge)
     return (
       <div>
         <div className="BadgeDetails__hero">

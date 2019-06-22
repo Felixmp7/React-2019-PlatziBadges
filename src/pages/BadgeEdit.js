@@ -2,7 +2,7 @@ import React, {Component , Fragment} from 'react'
 import Badge from '../components/Badge'
 import BadgeForm from '../components/BadgeForm'
 import header from '../images/platziconf-logo.svg'
-import { BeatLoader } from 'react-spinners';
+import Loader from '../components/Loader'
 import API from '../API'
 import './styles/BadgeEdit.css'
 
@@ -66,18 +66,7 @@ class BadgeEdit extends Component {
   }
   render () {
     if (this.state.loading) {
-      return (
-        <div className="Loader__container">
-          <div className="Loader">
-            <BeatLoader
-                      sizeUnit={"px"}
-                      size={30}
-                      color={'#7DCD3F'}
-                      loading={this.state.loading}
-                    />
-          </div>
-        </div>
-      )
+      return <Loader size={30} color={'yellow'}/>
     }
     return (
       <Fragment>
