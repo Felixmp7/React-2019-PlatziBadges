@@ -1,7 +1,7 @@
 import React, {Component , Fragment} from 'react'
 import Badge from '../components/Badge'
 import BadgeForm from '../components/BadgeForm'
-import header from '../images/badge-header.svg'
+import header from '../images/platziconf-logo.svg'
 import './styles/BadgeNew.css'
 
 class BadgeNew extends Component {
