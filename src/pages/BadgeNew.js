@@ -2,6 +2,7 @@ import React, {Component , Fragment} from 'react'
 import Badge from '../components/Badge'
 import BadgeForm from '../components/BadgeForm'
 import header from '../images/platziconf-logo.svg'
+import API from '../API'
 import './styles/BadgeNew.css'
 
 class BadgeNew extends Component {
@@ -25,6 +26,19 @@ class BadgeNew extends Component {
         [e.target.name]: e.target.value // los datos sin pisar los anteriores.
       }
     })
+  }
+
+  handleSubmit = async e => {
+    e.preventDefault()
+    this.setState({ loading: true, error: null})
+
+    try {
+      await API.badges.create(this.state.form)
+      this.setState({ loading: false})
+
+    } catch (error) {
+      this.setState({ loading: false, error})
+    }
   }
   render () {
     return (
