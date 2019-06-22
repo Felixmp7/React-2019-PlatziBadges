@@ -1,7 +1,7 @@
 import React from 'react'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
-import Gravatar from './Gravatar'
+import BadgesListItem from './BadgesListItem'
 import './styles/BadgesList.css'
 
 const BadgesList = props => {
@@ -25,21 +25,13 @@ const BadgesList = props => {
       {
         props.badges.map(badge => {
           return (
-            <li className="Badge_Container" key={badge.id}>
-              <div className="Badge_Avatar">
-                <Gravatar
-                  email={badge.email}
-                  alt={props.firstName}
-                />
-                {/* <img src={badge.avatarUrl} alt={props.firstName}/> */}
-              </div>
-              <div className="Badge_Info">
-                <p className="Badge_Name">{badge.firstName} {badge.lastName}</p>
-                <p className="Badge_Twitter">
-                  @{badge.twitter}
-                </p>
-                <p className="Badge_JobTitle">{badge.jobTitle}</p>
-              </div>
+            <li key={badge.id}>
+              <Link
+                to={`/badges/${badge.id}/edit`}
+                className="text-reset text-decoration-none"
+                >
+                <BadgesListItem badge={badge}/>
+              </Link>
             </li>
           )
         })
