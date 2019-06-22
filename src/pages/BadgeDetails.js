@@ -47,14 +47,14 @@ const BadgeDetails = props => {
                 </Link>
               </div>
 
-              <React.Fragment>
+              <div>
                 <button onClick={props.onOpenModal} className="btn btn-danger">Delete</button>
                 <DeleteBadgeModal
                   isOpen={props.modalIsOpen}
                   onClose={props.onCloseModal}
                   onDeleteBadge={props.onDeleteBadge}
                 />
-              </React.Fragment>
+              </div>
             </React.Fragment>
           </div>
         </div>
