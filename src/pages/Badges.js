@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import { Link } from 'react-router-dom'
-import { BeatLoader } from 'react-spinners';
+import Loader from '../components/Loader'
 import BadgesList from '../components/BadgesList'
 import PagError from '../components/PagError'
 import confLogo from '../images/badge-header.svg'
@@ -38,18 +38,7 @@ class Badges extends Component {
 
   render () {
     if (this.state.loading && !this.state.data) {
-      return (
-        <div className="Loader__container">
-          <div className="Loader">
-            <BeatLoader
-                      sizeUnit={"px"}
-                      size={50}
-                      color={'#7DCD3F'}
-                      loading={this.state.loading}
-                    />
-          </div>
-        </div>
-      )
+      return <Loader size={40} color={'blue'} />
     }
 
     if (this.state.error) {
@@ -77,18 +66,7 @@ class Badges extends Component {
           <div className="Badges__container">
             <BadgesList badges={this.state.data}/>
             {
-              this.state.loading && (
-                <div className="Loader__container">
-                  <div className="Loader">
-                    <BeatLoader
-                              sizeUnit={"px"}
-                              size={30}
-                              color={'#ccc'}
-                              loading={this.state.loading}
-                            />
-                  </div>
-                </div>
-              )
+              this.state.loading && <Loader size={20} color={'black'} />
             }
           </div>
         </div>
