@@ -39,6 +39,9 @@ class BadgeNew extends Component {
       await API.badges.create(this.state.form)
       this.setState({ loading: false})
 
+      this.props.history.push('/badges') // Éste metodo de React-Router me permite
+      // navegar hasta /badges en el momento que hago submit
+
     } catch (error) {
       this.setState({ loading: false, error})
     }
