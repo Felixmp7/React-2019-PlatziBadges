@@ -46,7 +46,11 @@ class BadgeNew extends Component {
               />
             </div>
             <div className="col-6">
-              <BadgeForm onChange={this.handleChange} formValues={this.state.form}/>
+              <BadgeForm
+                onChange={this.handleChange}
+                formValues={this.state.form}
+                onSubmit={this.handleSubmit}
+              />
             </div>
           </div>
         </div>
