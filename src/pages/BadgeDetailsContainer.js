@@ -8,7 +8,7 @@ import './styles/BadgeDetails.css'
 import API from '../API'
 
 
-class BadgeDetails extends Component {
+class BadgeDetailsContainer extends Component {
   state = {
     loading: true,
     error: null,
@@ -95,4 +95,4 @@ class BadgeDetails extends Component {
   }
 }
 
-export default BadgeDetails
+export default BadgeDetailsContainer
