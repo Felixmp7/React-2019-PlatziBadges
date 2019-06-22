@@ -3,7 +3,6 @@ import Badge from '../components/Badge'
 import BadgeForm from '../components/BadgeForm'
 import header from '../images/platziconf-logo.svg'
 import { BeatLoader } from 'react-spinners';
-import PagError from '../components/PagError'
 import API from '../API'
 import './styles/BadgeNew.css'
 
@@ -59,10 +58,6 @@ class BadgeNew extends Component {
         </div>
       )
     }
-
-    if (this.state.error) {
-      return <PagError error={this.state.error}/>
-    }
     return (
       <Fragment>
         <div className="BadgeNew__hero">
@@ -86,6 +81,7 @@ class BadgeNew extends Component {
                 onChange={this.handleChange}
                 formValues={this.state.form}
                 onSubmit={this.handleSubmit}
+                error={this.state.error}
               />
             </div>
           </div>

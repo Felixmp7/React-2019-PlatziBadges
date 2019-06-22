@@ -1,16 +1,13 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 
 class BadgeForm extends Component {
   handleClick = e => {
     console.log('Button was clicked')
   }
-  // handleSubmit = e => {
-  //   e.preventDefault()
-  //   console.log('Form was submited')
-  // }
+
   render () {
     return (
-      <div>
+      <Fragment>
         <h1>New Attendant</h1>
 
         <form onSubmit={this.props.onSubmit}>
@@ -75,8 +72,13 @@ class BadgeForm extends Component {
             >
             Save
           </button>
+          {
+            this.props.error && (
+              <p className="text-danger">{this.props.error.message}</p>
+            )
+          }
         </form>
-      </div>
+      </Fragment>
     )
   }
 }
