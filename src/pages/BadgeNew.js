@@ -30,7 +30,7 @@ class BadgeNew extends Component {
     return (
       <Fragment>
         <div className="BadgeNew__hero">
-          <img className="img-fluid" src={header} alt="BadgeNew__hero"/>
+          <img className="BadgeNew__hero_image img-fluid" src={header} alt="BadgeNew__hero"/>
         </div>
 
         <div className="container">
