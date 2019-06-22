@@ -48,8 +48,8 @@ const BadgeDetails = props => {
               </div>
 
               <React.Fragment>
-                <button className="btn btn-danger">Delete</button>
-                <Modal isOpen={true} onClose={props.onCloseModal}>Lorem Ipsum</Modal>
+                <button onClick={props.onOpenModal} className="btn btn-danger">Delete</button>
+                <Modal isOpen={props.modalIsOpen} onClose={props.onCloseModal}>Lorem Ipsum</Modal>
               </React.Fragment>
             </React.Fragment>
           </div>
