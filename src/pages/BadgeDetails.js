@@ -1,6 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import {Link} from 'react-router-dom'
+import Modal from '../components/Modal'
 import Badge from '../components/Badge'
 import confLogo from '../images/platziconf-logo.svg'
 import './styles/BadgeDetails.css'
@@ -49,13 +49,7 @@ const BadgeDetails = props => {
 
               <React.Fragment>
                 <button className="btn btn-danger">Delete</button>
-                {
-                  // ReactDOM.createPortal(que vas a renderizar, donde vas a renderizar)
-                  ReactDOM.createPortal(
-                    <h1>Hola, Realmente no estoy aquí</h1>,
-                    document.getElementById('modal')
-                  )
-                }
+                <Modal />
               </React.Fragment>
             </React.Fragment>
           </div>
