@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { css } from '@emotion/core';
 import { MoonLoader } from 'react-spinners';
 import BadgesList from '../components/BadgesList'
+import PagError from '../components/PagError'
 import confLogo from '../images/badge-header.svg'
 import API from '../API'
 import './styles/Badges.css'
@@ -54,7 +55,7 @@ class Badges extends Component {
     }
 
     if (this.state.error) {
-      return <h3>{`Error ${this.state.error.message}`}</h3>
+      return <PagError error={this.state.error}/>
     }
     return (
       <Fragment>
