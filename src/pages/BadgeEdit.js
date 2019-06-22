@@ -54,7 +54,7 @@ class BadgeEdit extends Component {
     this.setState({ loading: true, error: null})
 
     try {
-      await API.badges.create(this.state.form)
+      await API.badges.update(this.props.match.params.badgeId , this.state.form)
       this.setState({ loading: false})
 
       this.props.history.push('/badges') // Éste metodo de React-Router me permite
