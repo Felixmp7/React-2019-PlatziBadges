@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Modal from '../components/Modal'
+import DeleteBadgeModal from '../components/DeleteBadgeModal'
 import Badge from '../components/Badge'
 import confLogo from '../images/platziconf-logo.svg'
 import './styles/BadgeDetails.css'
@@ -49,7 +49,7 @@ const BadgeDetails = props => {
 
               <React.Fragment>
                 <button onClick={props.onOpenModal} className="btn btn-danger">Delete</button>
-                <Modal isOpen={props.modalIsOpen} onClose={props.onCloseModal}>Lorem Ipsum</Modal>
+                <DeleteBadgeModal isOpen={props.modalIsOpen} onClose={props.onCloseModal}/>
               </React.Fragment>
             </React.Fragment>
           </div>
