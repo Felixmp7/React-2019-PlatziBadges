@@ -17,7 +17,11 @@ class Badges extends Component {
   componentDidMount(){
     this.fetchData()
 
-    setInterval(this.fetchData, 4000)
+    this.intervalID = setInterval(this.fetchData, 4000)
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.intervalID)
   }
 
   fetchData = async () => {
@@ -39,7 +43,7 @@ class Badges extends Component {
           <div className="Loader">
             <BeatLoader
                       sizeUnit={"px"}
-                      size={30}
+                      size={50}
                       color={'#7DCD3F'}
                       loading={this.state.loading}
                     />
@@ -78,7 +82,7 @@ class Badges extends Component {
                   <div className="Loader">
                     <BeatLoader
                               sizeUnit={"px"}
-                              size={10}
+                              size={30}
                               color={'#ccc'}
                               loading={this.state.loading}
                             />
