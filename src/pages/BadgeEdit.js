@@ -98,6 +98,7 @@ class BadgeEdit extends Component {
               />
             </div>
             <div className="col-6">
+              <h1>Edit this Attendant</h1>
               <BadgeForm
                 onChange={this.handleChange}
                 formValues={this.state.form}
