@@ -27,7 +27,7 @@ const BadgesList = props => {
           return (
             <li key={badge.id}>
               <Link
-                to={`/badges/${badge.id}/edit`}
+                to={`/badges/${badge.id}`}
                 className="text-reset text-decoration-none"
                 >
                 <BadgesListItem badge={badge}/>
