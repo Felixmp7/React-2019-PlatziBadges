@@ -6,6 +6,8 @@ import './styles/BadgesList.css'
 
 const BadgesList = props => {
 
+  const [query,setQuery] = React.useState('')
+
   if(props.badges.length === 0){
     return (
       <div>
@@ -24,7 +26,12 @@ const BadgesList = props => {
     <React.Fragment>
       <div className="form-group">
         <label>Filter Badges</label>
-        <input type="text" className="form-control"/>
+        <input type="text" className="form-control"
+          value={query}
+          onChange={e => {
+            setQuery(e.target.value);
+          }}
+        />
       </div>
       <ul className="list-unstyled">
         {
