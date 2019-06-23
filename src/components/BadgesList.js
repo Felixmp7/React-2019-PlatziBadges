@@ -8,6 +8,10 @@ const BadgesList = props => {
 
   const [query,setQuery] = React.useState('')
 
+  const filteredBadges = props.badges.filter( badge => {
+    return badge.includes(query)
+  })
+
   if(props.badges.length === 0){
     return (
       <div>
