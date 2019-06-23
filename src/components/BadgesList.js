@@ -9,7 +9,7 @@ const BadgesList = props => {
   const [query,setQuery] = React.useState('')
 
   const filteredBadges = props.badges.filter( badge => {
-    return badge.firstName.includes(query)
+    return `${badge.firstName} ${badge.lastName}`.toLowerCase().includes(query.toLowerCase())
   })
 
   if(filteredBadges.length === 0){
