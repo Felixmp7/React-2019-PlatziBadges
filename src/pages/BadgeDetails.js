@@ -5,8 +5,16 @@ import Badge from '../components/Badge'
 import confLogo from '../images/platziconf-logo.svg'
 import './styles/BadgeDetails.css'
 
-const BadgeDetails = props => {
+useIncreaseCount = max => {
   const [count,setCount] = React.useState(0)
+  if (count > max) {
+    setCount(0)
+  }
+  return [count,setCount]
+}
+
+const BadgeDetails = props => {
+  const [count,setCount] = React.useIncreaseCount(4)
 
   const badge = props.badge
   return (
