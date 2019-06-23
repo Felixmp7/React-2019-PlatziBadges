@@ -9,12 +9,21 @@ const BadgesList = props => {
   const [query,setQuery] = React.useState('')
 
   const filteredBadges = props.badges.filter( badge => {
-    return badge.includes(query)
+    return badge.firstName.includes(query)
   })
 
-  if(props.badges.length === 0){
+  if(filteredBadges.length === 0){
     return (
       <div>
+        <div className="form-group">
+          <label>Filter Badges</label>
+          <input type="text" className="form-control"
+            value={query}
+            onChange={e => {
+              setQuery(e.target.value);
+            }}
+          />
+        </div>
         <h2>No badges were found</h2>
         <Link
           to="/badges/new"
@@ -39,7 +48,7 @@ const BadgesList = props => {
       </div>
       <ul className="list-unstyled">
         {
-          props.badges.map(badge => {
+          filteredBadges.map(badge => {
             return (
               <li key={badge.id}>
                 <Link
