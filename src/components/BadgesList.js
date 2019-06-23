@@ -21,22 +21,28 @@ const BadgesList = props => {
   }
 
   return (
-    <ul className="list-unstyled">
-      {
-        props.badges.map(badge => {
-          return (
-            <li key={badge.id}>
-              <Link
-                to={`/badges/${badge.id}`}
-                className="text-reset text-decoration-none"
-                >
-                <BadgesListItem badge={badge}/>
-              </Link>
-            </li>
-          )
-        })
-      }
-    </ul>
+    <React.Fragment>
+      <div className="form-group">
+        <label>Filter Badges</label>
+        <input type="text" className="form-control"/>
+      </div>
+      <ul className="list-unstyled">
+        {
+          props.badges.map(badge => {
+            return (
+              <li key={badge.id}>
+                <Link
+                  to={`/badges/${badge.id}`}
+                  className="text-reset text-decoration-none"
+                  >
+                  <BadgesListItem badge={badge}/>
+                </Link>
+              </li>
+            )
+          })
+        }
+      </ul>
+    </React.Fragment>
   );
 }
 
